@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import CharacterCard from "./CharacterCard";
 import SearchForm from "./SearchForm";
 
 export default function CharacterList(props) {
@@ -31,12 +30,13 @@ export default function CharacterList(props) {
       <SearchForm allChars={characters} />
 
       <h2>All the characters:</h2>
-      {characters.map( char => {
-        return (
-          <CharacterCard key={char.id} char={char} />
-        );
-      })}
-
+      <ul>
+        {characters.map( char => {
+          return (
+          <li>{char.name}</li>
+        )})
+        }
+      </ul>
     </section>
   );
 }
