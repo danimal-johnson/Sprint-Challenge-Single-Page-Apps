@@ -1,5 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 
-export default function CharacterCard() {
-  return <span>todo: character</span>;
+const Person = styled.span`
+  color: red;
+
+`
+
+export default function CharacterCard(props) {
+  return <Person>{props.char.name}</Person>;
 }
